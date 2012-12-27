@@ -4,8 +4,9 @@
  * It is a sample to demonstrate how to organize a Prestashop 1.5 module
  * It uses new developpement features of Prestashop 1.5.x version.
  *  - ModuleFrontController class
- *  - AdminController class for displaying tabs
+ *  - AdminController class for displaying tab with ObjectModel CRUD
  *  - New folder structure
+ *  - etc...
  *
  * @author Jordi Dosne (@JiDaii)
  * @version 1.0
