@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <module>
+            <name>JDFeedSample</name>
+            <displayName><![CDATA[JDFeedSample]]></displayName>
+            <version><![CDATA[1.0]]></version>
+            <description><![CDATA[Module pour cr&eacute;er un flux ]]></description>
+            <author><![CDATA[Jordi Dosne]]></author>
+            <tab><![CDATA[content_management]]></tab>
+	<confirmUninstall>Etes vous sûr de vouloir supprimer le module et sa configuration ?</confirmUninstall>
+            <is_configurable>1</is_configurable>
+            <need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+        </module>

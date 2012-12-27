@@ -1,0 +1,36 @@
+<?php
+
+global $_MODULE;
+$_MODULE = array();
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_2ec705ceecc570e5b49049789deee9a8'] = 'JDFeedSample';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_2971d3fee6ace70e4e52b197d5e393e3'] = 'Module pour créer un flux ';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_fa214007826415a21a8456e3e09f999d'] = 'Etes vous sûr de vouloir supprimer le module et sa configuration ?';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_4eb5aaef8aaf895fad25e3d403b84ad3'] = 'Impossible de créer la table `jd_feed`';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_712aed3a2011988fd69d19937d838a30'] = 'Impossible de créer la table `jd_feed_lang`';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_c748e01d90c0bcee01bbc2c5c038851d'] = 'Impossible de supprimer la table `jd_feed`';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_3e4d0f3601125933f754882f4009a194'] = 'Impossible de supprimer la table `jd_feed_lang`';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_a63deeb81002cce6358bdfbc5d9a640d'] = 'Impossible de supprimer la configuartion %s';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_7f8837a0340ee8129e7dd150a2e5b8d8'] = 'Impossible de créer l\'onglet \"AdminFeed\"';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_12de3725023e3c02c25c7898f524b25d'] = 'Impossible de copier le logo dans %s';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_8918fe3e375581828a56e0bf925f4f68'] = 'Impossible de supprimer l\'onglet';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_20015706a8cbd457cbb6ea3e7d5dc9b3'] = 'Configuration mise à jour';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_4e01a4ae6492a01b21db5a80913ab7db'] = 'Titre de la page de flux';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_fe724c0ada3d77c4fef53c1eba2da24c'] = 'Tri de la liste';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_02d369a256a7ad127c044b0fd9f5a169'] = 'Par date d\'ajout descendante';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_90ceee128838bd88e0df2fef3408af30'] = 'Par titre';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_fb57360079713d37cd4eff6dc29685e7'] = 'Nombre d\'éléments dans le block';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_b1c94ca2fbc3e78fc30069c8d0f01680'] = 'Tous';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_1c4645faeb1067723201ad837fe7cf69'] = 'derniers éléments';
+$_MODULE['<{jdfeedsample}prestashop>jdfeedsample_b17f3f4dcf653a5776792498a9b44d6a'] = 'Mettre à jour';
+$_MODULE['<{jdfeedsample}prestashop>adminfeedcontroller_b718adec73e04ce3ec720dd11a06a308'] = 'ID';
+$_MODULE['<{jdfeedsample}prestashop>adminfeedcontroller_b78a3223503896721cca1303f776159b'] = 'Titre';
+$_MODULE['<{jdfeedsample}prestashop>adminfeedcontroller_b5a7adde1af5c87d7fd797b6245c2a39'] = 'Description';
+$_MODULE['<{jdfeedsample}prestashop>adminfeedcontroller_86754577897acfb25deb69039d49d9a7'] = 'Affiché';
+$_MODULE['<{jdfeedsample}prestashop>adminfeedcontroller_f29ddbfb905eb2593fdcdfb243f9af85'] = 'Ajouté';
+$_MODULE['<{jdfeedsample}prestashop>adminfeedcontroller_ff0a3b7f3daef040faf89a88fdac01b7'] = 'Mis à jour';
+$_MODULE['<{jdfeedsample}prestashop>adminfeedcontroller_a80425472d94ae02c836da5b6f205b7b'] = 'Flux';
+$_MODULE['<{jdfeedsample}prestashop>adminfeedcontroller_51ec9bf4aaeab1b25bb57f9f8d4de557'] = 'Titre :';
+$_MODULE['<{jdfeedsample}prestashop>adminfeedcontroller_6252c0f2c2ed83b7b06dfca86d4650bb'] = 'Caractères invalides';
+$_MODULE['<{jdfeedsample}prestashop>adminfeedcontroller_d0042a700e9bdf79689d63ee6846dc0e'] = 'Description :';
+$_MODULE['<{jdfeedsample}prestashop>adminfeedcontroller_c9cc8cce247e49bae79f15173ce97354'] = 'Enregistrer';
+$_MODULE['<{jdfeedsample}prestashop>blockfeed_eb92025cb8c66f1850c13a9b602a1856'] = 'Voir tous';
