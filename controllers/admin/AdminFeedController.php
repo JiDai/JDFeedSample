@@ -1,8 +1,8 @@
 <?php
 
 /**
- * AdminFeedController file
- * Class to handle feed item CRUD in prestashop administration
+ * AdminFeedController classe
+ * Définit l'onglet de l'administration gérer le CRUD de l'ObjectModel
  *
  * @author Jordi Dosne @JiDaii
  */
@@ -13,14 +13,20 @@ class AdminFeedController extends ModuleAdminController
 
 	public function __construct()
 	{
+		// Table Mysql
 		$this->table = 'jd_feed';
 		$this->identifier = 'id_jd_feed';
+		// Définition de la classe ObjectModel lié au controller
 		$this->className = 'JDFeed';
+		
+		// L'ObjectModel est-il traduisible, oui
 		$this->lang = true;
 
+		// Action prédéfinies à afficher en bout de ligne du tableau
 		$this->addRowAction('edit');
 		$this->addRowAction('delete');
 
+		// Champs visible dans le tableau
 		$this->fields_list = array(
 			'id_jd_feed' => array(
 				'title' => $this->l('ID'),
@@ -33,12 +39,12 @@ class AdminFeedController extends ModuleAdminController
 			),
 			'description' => array(
 				'title' => $this->l('Description'),
-				'callback' => 'descriptionFieldCallback', // Set a callback to change field value before display
+				'callback' => 'descriptionFieldCallback', // Défini un callback pour change la valeur de la cellule juste avant de l'afficher
 			),
 			'active' => array(
 				'title' => $this->l('Displayed'),
 				'width' => 25,
-				'active' => 'status', // Use image button (cross and check) to handle displayed status
+				'active' => 'status', // Utilise un bouton (croix rouge et check vert) pour afficher le statut
 				'align' => 'center',
 				'type' => 'bool',
 				'orderby' => false,
@@ -68,7 +74,8 @@ class AdminFeedController extends ModuleAdminController
 	{
 		if (!$this->loadObject(true))
 			return;
-
+		
+		// Définition des champs du formulaire permettant la génération des for d'édition et de création
 		$this->fields_form = array(
 			'legend' => array(
 				'title' => $this->l('Feed'),

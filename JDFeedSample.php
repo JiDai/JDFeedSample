@@ -1,20 +1,20 @@
 <?php
 /**
  * JDFeedSample Module main file
- * It is a sample to demonstrate how to organize a Prestashop 1.5 module
- * It uses new developpement features of Prestashop 1.5.x version.
- *  - ModuleFrontController class
- *  - AdminController class for displaying tab with ObjectModel CRUD
- *  - New folder structure
+ * Ceci est un momdule simple qui a pour but de présenter quelques nouveautés 
+ * développeur de la version 1.5 de Prestashop ainsi que sa nouvelle organisation structurelle.
+ *  - Classe ModuleFrontController
+ *  - Classe AdminController pour l'affichage de l'onglet d'administration et le CRUD de l'ObjectModel lié
+ *  - Nouvelle structure des fichiers du module
  *  - etc...
  *
- * @author Jordi Dosne (@JiDaii)
+ * @author Jordi Dosne @JiDaii
  * @version 1.0
  */
 class JDFeedSample extends Module
 {
 	/**
-	 * Initialize the module
+	 * Initialisation du module
 	 *
 	 * @return void
 	 */
@@ -40,7 +40,7 @@ class JDFeedSample extends Module
 	}
 
 	/**
-	 * Install the module. Used by the Prestashop module installer
+	 * Installation du module. Utilisé par l'installateur de Prestashop
 	 *
 	 * @return boolean
 	 * @access public
@@ -58,7 +58,7 @@ class JDFeedSample extends Module
 	}
 
 	/**
-	 * Uninstall the module. Used by the Prestashop module uninstaller
+	 * Désinstallation du module. Utilisé par l'installateur de Prestashop
 	 *
 	 * @return boolean
 	 * @access public
@@ -72,9 +72,10 @@ class JDFeedSample extends Module
 	}
 
 	/**
-	 * Create tables
+	 * Creation des tables
 	 *
 	 * @return boolean
+	 * @access private
 	 */
 	private function _createSQLTables()
 	{
@@ -102,7 +103,7 @@ class JDFeedSample extends Module
 	}
 
 	/**
-	 * Delete tables
+	 * Suppression des tables
 	 *
 	 * @return boolean
 	 */
@@ -119,7 +120,7 @@ class JDFeedSample extends Module
 	}
 
 	/**
-	 * Initialize config values
+	 * Initialisation de la config 
 	 *
 	 * @return boolean
 	 */
@@ -137,7 +138,7 @@ class JDFeedSample extends Module
 	}
 
 	/**
-	 * Delete config values
+	 * Suppression des valeur de config
 	 *
 	 * @return boolean
 	 */
@@ -154,21 +155,25 @@ class JDFeedSample extends Module
 
 
 	/**
-	 * Install tab for subscriptions
+	 * Installation de l'onglet
 	 *
 	 * @return boolean
 	 */
 	private function _installTab()
 	{
-		/* If the "AdminSubscriptions" tab does not exist yet, create it */
+		// Si l'onglet "AdminFeed" n'existe pas on le créée
 		if( !$id_tab = Tab::getIdFromClassName('AdminFeed') )
 		{
 			$tab = new Tab();
-			$tab->class_name = 'AdminFeed'; // Class of admin controller, without 'Controller'
-			$tab->module = $this->name; // Link class to this module
-			$tab->id_parent =  (int) Tab::getIdFromClassName('AdminParentModules');   // Set 0 if you want show Tab at first level
+			// Classe du controller admin, sans 'Controller'
+			$tab->class_name = 'AdminFeed'; 
+			// Liaison de la classe à ce module
+			$tab->module = $this->name; 
+			// Mettre 0 si vous voulez un onglet au premier niveau
+			// Sinon spécifier un id de classe représentant l'onglet parent
+			$tab->id_parent =  (int) Tab::getIdFromClassName('AdminParentModules');   
 			/**
-			 * Class list represent tab at first level
+			 * Voici la liste des onglets parent possibles
 			 * - AdminCatalog
 			 * - AdminParentOrders
 			 * - AdminParentCustomer
@@ -186,7 +191,7 @@ class JDFeedSample extends Module
 				$tab->name[(int) $lang['id_lang']] = 'Feed';
 			if( !$tab->save() )
 				return $this->_abortInstall($this->l('Unable to create the "AdminFeed" tab'));
-			// If you set Tab at first level, you must provide an icon
+			// Si vous voulez un onglet au premier niveau, il faut placer une icône
 			if( !@copy(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'logo.gif', _PS_ROOT_DIR_ . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 't' . DIRECTORY_SEPARATOR . 'AdminFeed.gif') )
 				return $this->_abortInstall(sprintf($this->l('Unable to copy logo.gif in %s'), _PS_ROOT_DIR_ . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 't' . DIRECTORY_SEPARATOR));
 		}
@@ -197,7 +202,7 @@ class JDFeedSample extends Module
 	}
 
 	/**
-	 * Delete tab for subscriptions
+	 * Suppression de l'onglet
 	 *
 	 * @return boolean
 	 */
@@ -213,7 +218,7 @@ class JDFeedSample extends Module
 	}
 
 	/**
-	 * Set installation errors and return false
+	 * Définit les erreurs survenues et retourne false
 	 *
 	 * @param string $error Installation abortion reason
 	 * @return boolean Always false
@@ -230,7 +235,7 @@ class JDFeedSample extends Module
 
 
 	/**
-	 * Get content of module configuration page
+	 * Définit le contenu de la page de configuration du module
 	 *
 	 * @return string
 	 */
@@ -239,6 +244,8 @@ class JDFeedSample extends Module
 		$html = '';
 		$id_lang_default = (int)Configuration::get('PS_LANG_DEFAULT');
 		$languages = Language::getLanguages(false);
+		
+		// Traitement du formulaire envoyé
 		if( Tools::isSubmit('submitConfig') )
 		{
 			$message_trads = array();
@@ -297,7 +304,7 @@ class JDFeedSample extends Module
 	}
 
 	/**
-	 * Hook for displaying block with last feed items
+	 * Hook pour l'affichage des dernière élements du flux dans un bloc
 	 *
 	 * @param type $params
 	 * @return type

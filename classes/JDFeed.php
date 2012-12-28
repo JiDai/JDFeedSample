@@ -1,6 +1,6 @@
 <?php
 /**
- * Reprensent JDFeed object model
+ * JDFeed object model
  *
  * @author Jordi Dosne @JiDaii
  */
@@ -10,35 +10,35 @@ class JDFeed extends ObjectModel
 	public $id;
 
 	/**
-	 * Status for display. Is active = 1 shown, else not shown on front
+	 * Status for display. Si active = 1 on affiche sur le front
 	 *
 	 * @var int
 	 */
 	public $active = 0;
 
 	/**
-	 * Object creation date
+	 * Object date de la création (automatique par PS)
 	 *
 	 * @var string
 	 */
 	public $date_add;
 
 	/**
-	 * Object last modification date
+	 * Object date de la dernière modification (automatique par PS)
 	 *
 	 * @var string
 	 */
 	public $date_upd;
 
 	/**
-	 * Translated title
+	 * Titre traduite
 	 *
 	 * @var string
 	 */
 	public $title = '';
 
 	/**
-	 * Translated description
+	 * Description traduite
 	 *
 	 * @var string
 	 */
@@ -63,14 +63,13 @@ class JDFeed extends ObjectModel
 	);
 
 	/**
-	 * Find all active feed items
+	 * Trouve tous les éléments du flux qui sont actif
 	 *
 	 * @param int $id_lang
 	 * @return array
 	 */
 	public static function findAllActive( $id_lang )
 	{
-
 		$res = Db::getInstance()->executeS('
 			SELECT *
 			FROM `' . _DB_PREFIX_ . self::$definition['table'] . '` a
@@ -85,7 +84,7 @@ class JDFeed extends ObjectModel
 
 
 	/**
-	 * Find all feed items
+	 * Trouve tous les éléments du flux qui sont actif ou non
 	 *
 	 * @param int $id_lang
 	 * @return array
@@ -104,7 +103,7 @@ class JDFeed extends ObjectModel
 	}
 
 	/**
-	 * Find last feed item for left column block
+	 * Trouve les dernier éléments du flux par date de création ou titre
 	 *
 	 * @param int $id_lang
 	 * @param int $order
